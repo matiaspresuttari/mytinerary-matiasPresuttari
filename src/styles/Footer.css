@@ -1,0 +1,19 @@
+footer{
+    min-height: 4vh;
+    bottom: 0;
+    font-weight: bold;
+    justify-content: space-between;
+    position: absolute;
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:2vh;
+}
+
+.redes{
+    padding-left: 0.5rem;
+}
+
+.links{
+    margin-left:-2vw;
+    color: #2D91DA;
+}

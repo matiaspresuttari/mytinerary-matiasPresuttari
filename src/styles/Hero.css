@@ -1,0 +1,33 @@
+.contenedor1{
+    padding-top: 4vh;
+    margin-top: 3vh;
+    gap: 4vw;
+    padding-left:5vw;
+    padding-right:5vw;
+}
+
+.aeropuerto{
+    max-width: 20rem;
+    border: 0.2vw solid black;
+}
+
+.texto{
+    max-width:33rem;
+}
+
+.welcome{
+    font-size:1.7rem
+}
+
+.bot{
+    background-color: #2D91DA;
+    color: #ffffff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.bot:hover {
+    background-color: #2D64DA;
+    color: #fff;
+}

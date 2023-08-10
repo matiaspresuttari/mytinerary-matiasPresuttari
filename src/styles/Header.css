@@ -1,0 +1,36 @@
+nav{
+    margin-left:4%;
+    margin-right:4%;
+}
+
+.hamburguesa{
+    margin-top: .4rem;
+    margin-bottom: .2rem;
+}
+
+.nav-link{
+    border-style: solid;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-top: .4rem;
+    margin-bottom: .2rem;
+    text-align: center;
+}
+
+.boton-login{
+    padding:0.5rem;
+    margin-top:0.3rem;
+    font-weight: bold;
+    border: none;
+}
+
+.img-login{
+    width:1.5rem;
+    margin-right:0.5rem;
+}
+
+.titulo{
+    text-decoration: none;
+    color: black;
+    font-size:2.4rem
+}
