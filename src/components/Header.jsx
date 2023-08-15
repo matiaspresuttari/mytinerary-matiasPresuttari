@@ -17,10 +17,10 @@ const Header = () => {
                                 <a className="nav-link active" aria-current="page" href="#"><b>Home</b></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./cities.html"><b>Cities</b></a>
+                                <a className="nav-link" href="./cities"><b>Cities</b></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link boton-login" href="./cities.html"><img src="../../user.png" alt="" className='img-login'/><b>Login</b></a>
+                                <a className="nav-link boton-login" href=""><img src="../../user.png" alt="" className='img-login'/><b>Login</b></a>
                             </li>
                         </ul>
                     </div>

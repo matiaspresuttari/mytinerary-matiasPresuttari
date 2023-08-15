@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/Carousel.css'
 
 const Carousel = () => {
@@ -78,6 +78,18 @@ const Carousel = () => {
             setIndex(0)
         }
     }
+
+    const autoSlide = () => {
+        handleNext();
+    };
+
+    useEffect(() => {
+        const interval = setInterval(autoSlide, 5000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [index]);
 
     return (
         <div id="carouselExample" className="carousel slide carusel">
