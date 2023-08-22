@@ -25,3 +25,7 @@ h3{
     font-size:3vh;
     color:light-black;
 }
+
+.carousel-inner{
+    max-width: 86vw;
+}

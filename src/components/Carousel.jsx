@@ -94,7 +94,7 @@ const Carousel = () => {
     return (
         <div id="carouselExample" className="carousel slide carusel">
             <h2 className='text-center'>My Tineraries</h2>
-            <div className='d-flex'>
+            <div className='d-flex justify-content-center'>
                 <button onClick={handlePrev} className="boton carousel-control-prev-icon align-self-center"></button>
                 <div className="carousel-inner">
                     <div className="carousel-item active d-flex justify-content-center flex-wrap">

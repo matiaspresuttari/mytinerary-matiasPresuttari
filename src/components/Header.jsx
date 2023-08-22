@@ -14,7 +14,7 @@ const Header = () => {
                     <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link" aria-current="page" href="/"><b>Home</b></a>
+                                <a className="nav-link" href="/"><b>Home</b></a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/cities"><b>Cities</b></a>
