@@ -1,0 +1,34 @@
+.contenedor2{
+    padding-top: 4vh;
+    margin-top: 3vh;
+    gap: 4vw;
+    padding-left:5vw;
+    padding-right:5vw;
+}
+
+.color{
+    background-color:#DCDCDC;
+    padding-color:#DCDCDC;
+}
+
+.text{
+    background-color:#DCDCDC;
+    padding-color:#DCDCDC;
+    margin:0vw;
+}
+
+.images{
+    width:20rem;
+    height:11rem;
+}
+
+.tarjeta{
+    padding:1vw;
+    border: 1px solid black;
+    
+}
+
+.input{
+    margin-top:-2rem;
+    margin-bottom:-1rem;
+}

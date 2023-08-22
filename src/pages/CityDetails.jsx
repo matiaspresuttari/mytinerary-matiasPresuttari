@@ -1,15 +1,15 @@
 import React from 'react'
 import Main from '../layouts/main'
-import CityList from '../components/CityList'
+import Card from '../components/Card'
 
-const Cities = () => {
+const City = () => {
     return (
         <>
             <Main>
-                <CityList />
+                <Card />
             </Main>
         </>
     )
 }
 
-export default Cities
+export default City
