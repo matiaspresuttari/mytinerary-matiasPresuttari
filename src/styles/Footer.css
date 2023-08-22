@@ -17,3 +17,7 @@ footer{
     margin-left:-2vw;
     color: #2D91DA;
 }
+
+.links:hover{
+    color:black;
+}

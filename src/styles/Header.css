@@ -17,6 +17,11 @@ nav{
     text-align: center;
 }
 
+.nav-link:hover{
+    color:black;
+    font-size:1.1rem;
+}
+
 .boton-login{
     padding:0.5rem;
     margin-top:0.3rem;

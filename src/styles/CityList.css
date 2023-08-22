@@ -1,6 +1,4 @@
 .contenedor2{
-    padding-top: 4vh;
-    margin-top: 3vh;
     gap: 4vw;
     padding-left:5vw;
     padding-right:5vw;
@@ -25,10 +23,21 @@
 .tarjeta{
     padding:1vw;
     border: 1px solid black;
-    
 }
 
-.input{
-    margin-top:-2rem;
-    margin-bottom:-1rem;
+.paises{
+    font-size:1.3rem;
+}
+
+.justificado{
+    justify-content: space-between;
+    width:50vw;
+}
+
+.divtarjetas:hover .textotarjeta{
+    background-color: white;
+}
+
+.divtarjetas:hover{
+    background-color: white;
 }
