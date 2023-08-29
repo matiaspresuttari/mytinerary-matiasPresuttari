@@ -1,21 +1,28 @@
 import {createBrowserRouter} from 'react-router-dom'
-import Home from '../pages/Home.jsx'
-import Cities from '../pages/Cities.jsx'
-import CityDetails from '../pages/CityDetails.jsx'
+import Main from '../layouts/Main'
+import Home from '../pages/Home'
+import Cities from '../pages/Cities'
+import CityDetails from '../pages/CityDetails'
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Home/>
+        element: <Main/>,
+        children: [
+            {
+                path: '/',
+                element: <Home/>
+            },
+            {
+                path: '/cities',
+                element: <Cities/>
+            },
+            {
+                path: '/cities/:id',
+                element: <CityDetails/>
+            },
+        ]
     },
-    {
-        path: '/cities',
-        element: <Cities/>
-    },
-    {
-        path: '/cities/:id',
-        element: <CityDetails/>
-    }
 ]);
 
 export default router;

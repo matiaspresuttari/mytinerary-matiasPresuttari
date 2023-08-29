@@ -1,12 +1,13 @@
+import { Outlet } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/footer'
 
-const Main = ({children}) => {
+const Main = () => {
     return (
         <>
             <Header/>
             <main className=''>
-                {children}
+                <Outlet/>
             </main>
             <Footer/>
         </>

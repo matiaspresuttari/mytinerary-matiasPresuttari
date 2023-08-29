@@ -3,12 +3,10 @@ import '../styles/CityList.css'
 import axios from "axios"
 import Link from './Link'
 import { useDispatch, useSelector } from "react-redux"
-import { get_cities } from "../store/actions/cityActions"
+import { filter_cities, get_cities } from "../store/actions/cityActions"
 
 const CityList = () => {
-    const [cities,setCities]=useState()
-
-    const store=useSelector((store)=>store.cityReducer.cities)
+    const cities=useSelector((store)=>store.cityReducer.cities)
 
     const dispatch = useDispatch()
 
@@ -19,19 +17,9 @@ const CityList = () => {
     }, [])
 
     const handleSearch=async()=>{
-        const name = inputSearch.current.value
-
-        try {
-            const response = await axios.get(`http://localhost:8000/api/cities?name=${name}`)
-            setCities(response.data.cities)
-        } catch (error) {
-            if(error.response.status==404){
-                console.log('Not found');
-                setCities([])
-            } else{
-                console.log(error);
-            }
-        }
+        dispatch(filter_cities({
+            name: inputSearch.current.value
+        }))
     }
 
     return (
@@ -45,7 +33,7 @@ const CityList = () => {
             </div>
             <div className="d-flex flex-wrap justify-content-center gap-2 ">
                 {
-                    cities?.lenght>0
+                    cities?.length>0
                     ? cities?.map((city) => {
                         return (
                             <div key={city._id} to={`/cities/${city._id}`} className="divtarjetas rounded tarjeta color d-flex flex-column flex-wrap justify-content-center align-items-center">
@@ -56,7 +44,7 @@ const CityList = () => {
                             </div>
                         )
                     })
-                    : <h2>No se encontraron eventos</h2>
+                    : <h2>No cities were found.</h2>
                 }
             </div>
         </div>
