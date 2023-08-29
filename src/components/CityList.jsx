@@ -1,23 +1,36 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import '../styles/CityList.css'
 import axios from "axios"
 import Link from './Link'
+import { useDispatch, useSelector } from "react-redux"
+import { get_cities } from "../store/actions/cityActions"
 
 const CityList = () => {
     const [cities,setCities]=useState()
 
+    const store=useSelector((store)=>store.cityReducer.cities)
+
+    const dispatch = useDispatch()
+
+    let inputSearch=useRef()
+
     useEffect(()=> {
-        axios.get('http://localhost:8000/api/cities?name=')
-        .then(response => setCities(response.data.cities))
-        .catch(err=>console.log(err))
+        dispatch(get_cities())
     }, [])
 
-    const handleInputChange=async(city)=>{
+    const handleSearch=async()=>{
+        const name = inputSearch.current.value
+
         try {
-            const response = await axios.get(`http://localhost:8000/api/cities?name=${city.target.value}`)
+            const response = await axios.get(`http://localhost:8000/api/cities?name=${name}`)
             setCities(response.data.cities)
         } catch (error) {
-            console.log(error);
+            if(error.response.status==404){
+                console.log('Not found');
+                setCities([])
+            } else{
+                console.log(error);
+            }
         }
     }
 
@@ -25,11 +38,15 @@ const CityList = () => {
         <div className='contenedor2 py-5 d-flex align-items-center flex-column flex-wrap justify-content-center'>
             <div className="d-flex flex-wrap justificado align-items-center">
                 <h1 className='fw-bold' >Cities</h1>
-                <input onChange={handleInputChange} className="border-2 bordar-gray-700 rounded divtarjetas" type="text" placeholder="Find..."/>
+                <div>
+                    <input ref={inputSearch} className="border-2 bordar-gray-700 rounded divtarjetas" type="text" placeholder="Find..."/>
+                    <button onClick={handleSearch} className="rounded m-1">Find</button>
+                </div>
             </div>
             <div className="d-flex flex-wrap justify-content-center gap-2 ">
                 {
-                    cities?.map((city) => {
+                    cities?.lenght>0
+                    ? cities?.map((city) => {
                         return (
                             <div key={city._id} to={`/cities/${city._id}`} className="divtarjetas rounded tarjeta color d-flex flex-column flex-wrap justify-content-center align-items-center">
                                 <h1 className='fw-bold text textotarjeta'>{city.name}</h1>
@@ -39,6 +56,7 @@ const CityList = () => {
                             </div>
                         )
                     })
+                    : <h2>No se encontraron eventos</h2>
                 }
             </div>
         </div>
