@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
 import '../styles/CityList.css'
-import axios from "axios"
 import Link from './Link'
 import { useDispatch, useSelector } from "react-redux"
 import { filter_cities, get_cities } from "../store/actions/cityActions"

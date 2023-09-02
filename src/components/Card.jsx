@@ -1,31 +1,30 @@
 import React, { useEffect, useState } from "react"
-import axios from "axios"
 import '../styles/Card.css'
 import { useParams } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { get_city } from "../store/actions/cityActions"
 
 const Card = () => {
-    const [city,setCity]=useState()
+    const dispatch = useDispatch()
+    const city=useSelector((store)=>store.cityReducer.city)
     const {id}=useParams()
 
     useEffect(()=> {
-        axios.get(`http://localhost:8000/api/cities/${id}`)
-        .then(response => {
-            setCity(response.data.city)
-        })
-        .catch(err=>console.log(err))
+        dispatch(get_city({
+            id
+        }))
     }, [])
 
     return (
-        <div className='card d-flex justify-content-center align-items-center'>
-            <div className="tarjeta color d-flex flex-column flex-wrap justify-content-center align-items-center">
-                <div className="tarjeta color d-flex flex-column flex-wrap justify-content-center align-items-center">
-                    <a className="btn bot m-2" href='/cities'>Go back</a>
-                    <h1 className='fw-bold text'>{city?.name}</h1>
-                    <h2 className="text m-1">{city?.country}</h2>
-                    <img className="images rounded" src={city?.photo} alt="" />
-                    <h2 className="text m-2">Under construction...</h2>
-                </div>
+        // <div className='card d-flex justify-content-center align-items-center'>
+        <div className="divciudad fondocolor color d-flex flex-wrap justify-content-center align-items-center">
+            <div className="color p-3 d-flex flex-column flex-wrap justify-content-center align-items-center">
+                <a className="btn bot m-2" href='/cities'>Go back</a>
+                <h1 className='fw-bold text'>{city?.name}</h1>
+                <h2 className="text m-1">{city?.country}</h2>
+                <a className="btn bot m-2" href='/cities'>View more</a>
             </div>
+            <img className="cityimage m-3" src={city?.photo} alt="" />
         </div>
     )
 }

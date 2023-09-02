@@ -1,4 +1,12 @@
-.card{
-    height:90vh;
+.fondocolor{
     background-color: #D0D3D2;
+}
+
+.cityimage{
+    width:30rem;
+    height:17rem;
+}
+
+.divciudad{
+    margin-top: 5vh;
 }
