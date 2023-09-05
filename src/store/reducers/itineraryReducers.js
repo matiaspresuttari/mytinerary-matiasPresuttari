@@ -1,9 +1,8 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { get_itineraries, get_itinerary } from "../actions/itineraryActions";
+import { get_itineraries } from "../actions/itineraryActions";
 
 const initialState = {
-    itineraries: [],
-    itinerary: {}
+    itineraries: []
 }
 
 export const itineraryReducer=createReducer(initialState,
@@ -12,12 +11,6 @@ export const itineraryReducer=createReducer(initialState,
             return {
                 ...state,
                 itineraries: action.payload.itineraries
-            }
-        })
-        .addCase(get_itinerary.fulfilled,(state,action)=>{
-            return {
-                ...state,
-                itinerary: action.payload.itinerary
             }
         })
 )

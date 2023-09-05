@@ -22,7 +22,6 @@ const Card = () => {
                 <a className="btn bot m-2" href='/cities'>Go back</a>
                 <h1 className='fw-bold text'>{city?.name}</h1>
                 <h2 className="text m-1">{city?.country}</h2>
-                <a className="btn bot m-2" href='/cities'>View more</a>
             </div>
             <img className="cityimage m-3" src={city?.photo} alt="" />
         </div>

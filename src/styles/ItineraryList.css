@@ -5,5 +5,26 @@
 }
 
 .imgitinerario{
-    width: 20rem;
+    max-width: 22vw;
+}
+
+.dolar{
+    width: 2rem;
+    height:1.4rem;
+}
+
+.userphoto{
+    max-width:5rem;
+    margin-bottom:1rem;
+}
+
+.itinerario{
+    border-bottom: 1px solid black;
+    padding-bottom:5%;
+    padding-top:5%;
+}
+
+.itinerarytitle{
+    margin-bottom: 5%;
+    border-bottom: 1px solid black;
 }
