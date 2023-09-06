@@ -52,7 +52,7 @@ const ItineraryList = () => {
                             </>
                         )
                     })
-                    : <h2>No itineraries were found.</h2>
+                    : <h2 className="align-self-center color">No itineraries were found.</h2>
                 }
             </div>
         </div>

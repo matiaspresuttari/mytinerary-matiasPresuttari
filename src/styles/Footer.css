@@ -14,10 +14,18 @@ footer{
 }
 
 .links{
-    margin-left:-2vw;
-    color: #2D91DA;
+    color: black;
+    border-bottom: 0.1rem solid black;
 }
 
 .links:hover{
     color:black;
+}
+
+.divFooter{
+    width:8rem;
+}
+
+.linkHome{
+    margin-right:2vw;
 }
