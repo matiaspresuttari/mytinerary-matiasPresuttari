@@ -1,7 +1,13 @@
 import React from 'react'
 import '../styles/Header.css'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+
+    const user = useSelector(store=>store.userReducer.user)
+    console.log(user);
+    const defaultPhoto = '/user.png'
+
     return (
         <header className="fixed-top">
             <nav className="navbar navbar-expand-md">
@@ -20,7 +26,7 @@ const Header = () => {
                                 <a className="nav-link" href="/cities"><b>Cities</b></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link boton-login" href=""><img src="../../user.png" alt="" className='img-login'/><b>Login</b></a>
+                                <a className="nav-link boton-login rounded" href="/signin"><img src={user? user.photo:defaultPhoto} alt="" className='img-login rounded'/><b>{user? null : 'Sign in'}</b></a>
                             </li>
                         </ul>
                     </div>

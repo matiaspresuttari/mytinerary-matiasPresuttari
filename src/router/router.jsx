@@ -3,6 +3,9 @@ import Main from '../layouts/Main'
 import Home from '../pages/Home'
 import Cities from '../pages/Cities'
 import CityDetails from '../pages/CityDetails'
+import SignIn from '../pages/SignIn'
+import SignUp from '../pages/SignUp'
+import ProtectedRoute from './ProtectedRoute'
 
 const router = createBrowserRouter([
     {
@@ -15,7 +18,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/cities',
-                element: <Cities/>
+                element: (<ProtectedRoute path='/'>
+                    <Cities/>
+                </ProtectedRoute>)
             },
             {
                 path: '/cities/:id',
@@ -23,6 +28,16 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path: '/signin',
+        element: (<ProtectedRoute path='/'>
+            <SignIn/>
+        </ProtectedRoute>)
+    },
+    {
+        path: '/signup',
+        element: <SignUp/>
+    }
 ]);
 
 export default router;
