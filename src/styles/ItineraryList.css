@@ -28,3 +28,17 @@
     margin-bottom: 5%;
     border-bottom: 1px solid black;
 }
+
+.botmore{
+    width:18rem;
+    background-color: black;
+    color: #ffffff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.botmore:hover {
+    background-color: #353535;
+    color: #fff;
+}

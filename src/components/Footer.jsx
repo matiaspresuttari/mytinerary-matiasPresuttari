@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Footer.css'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -8,8 +9,8 @@ const Footer = () => {
                 <p>©2023-Mindhub</p>
             </div>
             <div className=''>
-                <a className='text-decoration-none links linkHome' href="/">Home</a>
-                <a className='text-decoration-none links linkCities' href="/Cities">Cities</a>
+                <Link className='text-decoration-none links linkHome' to="/">Home</Link>
+                <Link className='text-decoration-none links linkCities' to="/cities">Cities</Link>
             </div>
             <div className='divFooter'>
                 <a href="https://facebook.com" target="_blank"><img src="/facebook.png" width="30" /></a>

@@ -26,8 +26,8 @@ const CityList = () => {
             <div className="d-flex flex-wrap justificado align-items-center">
                 <h1 className='fw-bold' >Cities</h1>
                 <div>
-                    <input ref={inputSearch} className="border-2 bordar-gray-700 rounded divtarjetas" type="text" placeholder="Find..."/>
-                    <button onClick={handleSearch} className="rounded m-1">Find</button>
+                    <input ref={inputSearch} className="rounded inputfind px-2 py-1" type="text" placeholder="Find..."/>
+                    <button onClick={handleSearch} className="rounded m-1 botfind">Find</button>
                 </div>
             </div>
             <div className="d-flex flex-wrap justify-content-center gap-2 ">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import '../styles/Card.css'
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { get_city } from "../store/actions/cityActions"
 
@@ -19,7 +19,7 @@ const Card = () => {
         // <div className='card d-flex justify-content-center align-items-center'>
         <div className="divciudad fondocolor color d-flex flex-wrap justify-content-center align-items-center">
             <div className="color p-3 d-flex flex-column flex-wrap justify-content-center align-items-center">
-                <a className="btn bot m-2" href='/cities'>Go back</a>
+                <Link className="btn botback m-2" to='/cities'>Go back</Link>
                 <h1 className='fw-bold text'>{city?.name}</h1>
                 <h2 className="text m-1">{city?.country}</h2>
             </div>
