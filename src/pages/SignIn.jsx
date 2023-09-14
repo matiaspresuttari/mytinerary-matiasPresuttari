@@ -2,12 +2,12 @@ import { useDispatch, useSelector } from "react-redux"
 import { user_login } from "../store/actions/userActions";
 import { useState } from "react";
 import GoogleSignIn from "../components/GoogleSignIn";
-import Swal from "sweetalert2";
 import '../styles/SignIn.css'
 
 const SignIn = () => {
     const store=useSelector(store=>store.userReducer)
 
+    
     const [formData, setFormData]=useState({
         email: '',
         password: ''

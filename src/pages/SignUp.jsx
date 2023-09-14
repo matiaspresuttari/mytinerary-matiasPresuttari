@@ -3,12 +3,13 @@ import { user_register } from "../store/actions/userActions";
 import '../styles/SignUp.css'
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
 
     const countries = ["Argentina", "Bolivia", "Brazil", "Chile", "France", "Germany", "Paraguay", "Peru", "Spain", "United States", "Venezuela"]
-
+    const navigate=useNavigate()
     const store=useSelector(store=>store.userReducer)
 
     const [formData, setFormData]=useState({
@@ -16,11 +17,6 @@ const SignUp = () => {
         password: '',
         name: '',
         photo: ''
-    })
-
-    const [formData2, setFormData2]=useState({
-        email: '',
-        password: ''
     })
 
     const dispatch = useDispatch();
@@ -31,21 +27,14 @@ const SignUp = () => {
             [event.target.name]: event.target.value //modificar solo el estado que cambia
         })
     }
-    const handleInput2 = (event)=>{
-        setFormData2({
-            ... formData2,
-            [event.target.name]: event.target.value
-        })
-    }
 
     const handleSignUp = async(event) => {
         event.preventDefault()
 
         try {
-            dispatch(user_register({
-                data: formData,
-                data2: formData2
-            }))
+            const { data } = await axios.post('http://localhost:8000/api/auth/signup', formData)
+            console.log(data);
+            navigate('/signin')
 
         } catch (error) {
             console.log(error);
@@ -98,10 +87,7 @@ const SignUp = () => {
                             className="p-2 fields"
                             placeholder="Enter email"
                             required
-                            onChange={(e) => {
-                                handleInput(e);
-                                handleInput2(e);
-                            }}
+                            onChange={handleInput}
                         />
                     </div>
                 </div>
@@ -117,10 +103,7 @@ const SignUp = () => {
                             className="p-2 fields"
                             placeholder="Enter password"
                             required
-                            onChange={(f) => {
-                                handleInput(f);
-                                handleInput2(f);
-                            }}
+                            onChange={handleInput}
                         />
                     </div>
                 </div>
@@ -141,9 +124,9 @@ const SignUp = () => {
                 <select defaultValue="0" className="form-select mb-2" name="Country" id="">
                     <option>Select your country</option>
                     {
-                        countries.map((country) => {
+                        countries.map((country,index) => {
                             return (
-                                <option>{country}</option>
+                                <option key={index}>{country}</option>
                             )
                         })
                     }
