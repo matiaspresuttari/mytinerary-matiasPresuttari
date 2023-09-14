@@ -1,5 +1,9 @@
 .divsignin{
     margin-top:8vh;
+    width:25rem;
+    height:30rem;
+    background-color:white;
+    border: 0.01rem solid grey;
 }
 
 .fields{

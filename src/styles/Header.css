@@ -1,6 +1,11 @@
 nav{
-    margin-left:4%;
-    margin-right:4%;
+    background-color: #D0D3D2;
+    width: 100vw;
+}
+
+.navdiv{
+    padding-right:6vw;
+    padding-left:6vw;
 }
 
 .hamburguesa{

@@ -24,7 +24,7 @@ const Header = () => {
     return (
         <header className="fixed-top">
             <nav className="navbar navbar-expand-md">
-                <div className="container-fluid">
+                <div className="container-fluid navdiv">
                     <Link className='titulo fw-bold' to="/">MyTinerary</Link>
                     <button className="navbar-toggler hamburguesa" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

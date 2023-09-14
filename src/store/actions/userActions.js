@@ -1,5 +1,6 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const user_photo = createAction('user_photo',(obj)=>{
     return {
@@ -14,6 +15,15 @@ export const user_login = createAsyncThunk('user_login',async(obj)=>{
         console.log(data);
         localStorage.setItem('token', data.response.token)
         localStorage.setItem('user', JSON.stringify(data.response.user))
+
+        Swal.fire({
+            title: 'Welcome!',
+            html: 'Thank you for signing in into <b>MyTinerary</b>.',
+            icon: 'success',
+            confirmButtonText: "Enjoy",
+            color: 'black',
+            background: '#EAEAEA',
+        })
 
         return {
             user: data.response.user,

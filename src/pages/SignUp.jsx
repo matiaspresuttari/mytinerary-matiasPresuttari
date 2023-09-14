@@ -42,39 +42,41 @@ const SignUp = () => {
     }
 
     return (
-        <div className="d-flex flex-column justify-content-center align-items-center text-align-center">
+        <div className="d-flex flex-column justify-content-center align-items-center text-align-center divsignup container rounded">
             <div className="d-flex flex-column text-center">
                 <a className='titulo fw-bold' href="/">MyTinerary</a>
             </div>
 
             <form onSubmit={handleSignUp} action="" className="mx-auto">
-                <div>
-                    <label htmlFor="name" className="fw-bold">Name</label>
-                    <div className="">
-                        <input
-                            type="text"
-                            name="name"
-                            autoComplete="name"
-                            className="p-2 fields"
-                            placeholder="Enter name"
-                            required
-                            onChange={handleInput}
-                        />
+                <div className="d-flex gap-4">
+                    <div>
+                        <label htmlFor="name" className="fw-bold">Name</label>
+                        <div className="">
+                            <input
+                                type="text"
+                                name="name"
+                                autoComplete="name"
+                                className="p-2 fields"
+                                placeholder="Enter name"
+                                required
+                                onChange={handleInput}
+                            />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <label htmlFor="lastname" className="fw-bold">Lastname</label>
-                    <div className="">
-                        <input
-                            id="lastname"
-                            type="text"
-                            name="lastname"
-                            autoComplete="lastname"
-                            className="p-2 fields"
-                            placeholder="Enter lastname"
-                            required
-                            onChange={handleInput}
-                        />
+                    <div>
+                        <label htmlFor="lastname" className="fw-bold">Lastname</label>
+                        <div className="">
+                            <input
+                                id="lastname"
+                                type="text"
+                                name="lastname"
+                                autoComplete="lastname"
+                                className="p-2 fields"
+                                placeholder="Enter lastname"
+                                required
+                                onChange={handleInput}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -121,7 +123,7 @@ const SignUp = () => {
                         />
                     </div>
                 </div>
-                <select defaultValue="0" className="form-select mb-2" name="Country" id="">
+                <select defaultValue="0" className="form-select mb-2 selectcolor" name="Country" id="">
                     <option>Select your country</option>
                     {
                         countries.map((country,index) => {

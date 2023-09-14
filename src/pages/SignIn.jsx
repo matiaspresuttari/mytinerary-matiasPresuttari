@@ -37,21 +37,21 @@ const SignIn = () => {
     }
 
     return (
-        <div className="d-flex flex-column justify-content-center align-items-center text-align-center divsignin">
-            <div className="d-flex flex-column text-center">
-                <a className='titulo fw-bold mb-3' href="/">MyTinerary</a>
+        <div className="d-flex flex-column justify-content-center align-items-center text-align-center divsignin container rounded">
+            <div className="d-flex flex-column text-center ">
+                <a className='titulo fw-bold mb-3 ' href="/">MyTinerary</a>
             </div>
 
-            <form onSubmit={handleSignIn} action="" className="mx-auto">
+            <form onSubmit={handleSignIn} action="" className="mx-auto ">
                 <div>
-                    <label htmlFor="email" className="fw-bold">Email</label>
+                    <label htmlFor="email" className="fw-bold ">Email</label>
                     <div className="">
                         <input
                             onChange={handleInput}
                             type="email"
                             name="email"
                             autoComplete="username"
-                            className="p-2 fields rounded"
+                            className="p-2 fields rounded "
                             placeholder="Enter email"
                         />
                     </div>
