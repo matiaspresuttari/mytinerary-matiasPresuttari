@@ -5,7 +5,8 @@ import Cities from '../pages/Cities'
 import CityDetails from '../pages/CityDetails'
 import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
-import ProtectedRoute from './ProtectedRoute'
+import UserNotExists from './UserNotExists'
+import UserExists from './UserExists'
 
 const router = createBrowserRouter([
     {
@@ -18,9 +19,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/cities',
-                element: (<ProtectedRoute path='/'>
+                element: (<UserNotExists path='/'>
                     <Cities/>
-                </ProtectedRoute>)
+                </UserNotExists>)
             },
             {
                 path: '/cities/:id',
@@ -30,13 +31,15 @@ const router = createBrowserRouter([
     },
     {
         path: '/signin',
-        element: (<ProtectedRoute path='/'>
+        element: (<UserExists path='/'>
             <SignIn/>
-        </ProtectedRoute>)
+        </UserExists>)
     },
     {
         path: '/signup',
-        element: <SignUp/>
+        element: (<UserExists path='/'>
+            <SignUp/>
+        </UserExists>)
     }
 ]);
 

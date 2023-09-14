@@ -2,10 +2,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { user_login } from "../store/actions/userActions";
 import { useState } from "react";
 import GoogleSignIn from "../components/GoogleSignIn";
+import Swal from "sweetalert2";
+import '../styles/SignIn.css'
 
 const SignIn = () => {
     const store=useSelector(store=>store.userReducer)
-    console.log(store);
 
     const [formData, setFormData]=useState({
         email: '',
@@ -21,8 +22,6 @@ const SignIn = () => {
         })
     }
 
-    console.log(formData);
-
     const handleSignIn = async(event) => {
         event.preventDefault()
 
@@ -30,62 +29,57 @@ const SignIn = () => {
             dispatch(user_login({
                 data: formData
             }))
+
+
         } catch (error) {
             console.log(error);
         }
     }
 
     return (
-        <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-lg text-center">
-                <h1 className="text-2xl font-bold sm:text-3xl">Get started today!</h1>
-                <p className="mt-4 text-gray-500">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla
-                    eaque error neque ipsa culpa autem, at itaque nostrum!
-                </p>
+        <div className="d-flex flex-column justify-content-center align-items-center text-align-center divsignin">
+            <div className="d-flex flex-column text-center">
+                <a className='titulo fw-bold mb-3' href="/">MyTinerary</a>
             </div>
 
-            <form onSubmit={handleSignIn} action="" className="mx-auto mb-0 mt-8 max-w-md space-y-4">
+            <form onSubmit={handleSignIn} action="" className="mx-auto">
                 <div>
-                    <label htmlFor="email" className="sr-only">Email</label>
-                    <div className="relative">
+                    <label htmlFor="email" className="fw-bold">Email</label>
+                    <div className="">
                         <input
                             onChange={handleInput}
                             type="email"
                             name="email"
-                            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                            autoComplete="username"
+                            className="p-2 fields rounded"
                             placeholder="Enter email"
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label htmlFor="password" className="sr-only">Password</label>
-
-                    <div className="relative">
+                    <label htmlFor="password" className="fw-bold">Password</label>
+                    <div className="mb-3">
                         <input
                             onChange={handleInput}
                             type="password"
                             name="password"
-                            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                            autoComplete="current-password"
+                            className="p-2 fields rounded"
                             placeholder="Enter password"
                         />
                     </div>
+                    <GoogleSignIn></GoogleSignIn>
                 </div>
 
-                <GoogleSignIn></GoogleSignIn>
 
-                <div className="flex items-center justify-between">
-                    <p className="text-sm text-gray-500">
+                <div className="">
+                    <p className="fw-bold mt-3">
                         No account?
-                        <a className="underline" href="/signup">Sign up</a>
+                        <a className="px-1" href="/signup">Sign up</a>
                     </p>
 
-                    <button
-                        type="submit"
-                        className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
-                        onClick={handleSignIn}
-                    >
+                    <button type="submit" className="px-3 py-2 fw-bold rounded signinbutton" onClick={handleSignIn}>
                         Sign in
                     </button>
                 </div>

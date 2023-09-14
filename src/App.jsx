@@ -12,10 +12,12 @@ function App() {
   useEffect(() => {
     let url = 'http://localhost:8000/api/auth/token'
     let token = localStorage.getItem('token')
+
     if(token){
-      let configs = {headers:{'Authorization':`Bearer${token}`}}
+      let configs = {headers:{'Authorization':`Bearer ${token}`}}
       axios.post(url,null,configs)
         .then(response=>dispatch(user_token(response.data.user)))
+        // .then(response=>console.log(response.data.user))
         .catch(err=>console.log(err))
     }
   }, [])
