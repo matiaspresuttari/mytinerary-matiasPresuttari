@@ -2,6 +2,7 @@ import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useRef, useState } from "react"
 import { user_login_google } from "../store/actions/userActions";
+import apiUrl from "../api";
 
 const GoogleSignIn = () => {
     const store=useSelector(store=>store.userReducer)
@@ -16,7 +17,7 @@ const GoogleSignIn = () => {
             token_id: response.credential
         }
 
-        const userResponse = await axios.post('http://localhost:8000/api/auth/google',data)
+        const userResponse = await axios.post(`${apiUrl}/auth/google`,data)
         console.log(userResponse);
         
         try {

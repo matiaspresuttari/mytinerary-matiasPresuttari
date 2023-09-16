@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import apiUrl from "../api";
 
 const SignUp = () => {
 
@@ -32,7 +33,7 @@ const SignUp = () => {
         event.preventDefault()
 
         try {
-            const { data } = await axios.post('http://localhost:8000/api/auth/signup', formData)
+            const { data } = await axios.post(`${apiUrl}/auth/signup`, formData)
             console.log(data);
             navigate('/signin')
 
