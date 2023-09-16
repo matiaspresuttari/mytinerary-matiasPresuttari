@@ -33,7 +33,7 @@ const GoogleSignIn = () => {
     useEffect(()=>{
         if(window.google) {
             window.google.accounts.id.initialize({
-                client_id: "163745540984-t05o5cgimrmch32a7qb1rhcvmso4e6mi.apps.googleusercontent.com",
+                client_id: import.meta.env.VITE_APP_GOOGLE_CLIENT,
                 callback: handleCredentialResponse
             });
             window.google.accounts.id.renderButton(
