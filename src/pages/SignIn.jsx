@@ -3,6 +3,7 @@ import { user_login } from "../store/actions/userActions";
 import { useState } from "react";
 import GoogleSignIn from "../components/GoogleSignIn";
 import '../styles/SignIn.css'
+import LinkButton from "../components/LinkButton";
 
 const SignIn = () => {
     const store=useSelector(store=>store.userReducer)
@@ -76,7 +77,7 @@ const SignIn = () => {
                 <div className="">
                     <p className="fw-bold mt-3">
                         No account?
-                        <a className="px-1" href="/signup">Sign up</a>
+                        <LinkButton className="" to="/signup" title="Sign up"></LinkButton>
                     </p>
 
                     <button type="submit" className="px-3 py-2 fw-bold rounded signinbutton" onClick={handleSignIn}>

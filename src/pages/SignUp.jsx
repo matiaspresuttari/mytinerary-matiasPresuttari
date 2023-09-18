@@ -1,11 +1,12 @@
 import GoogleSignIn from "../components/GoogleSignIn";
-import { user_register } from "../store/actions/userActions";
 import '../styles/SignUp.css'
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../api";
+import Link from "../components/Link"
+import LinkButton from "../components/LinkButton";
 
 const SignUp = () => {
 
@@ -140,13 +141,11 @@ const SignUp = () => {
                 <div className="mt-3">
                     <p className="fw-bold mt-3">
                         No account?
-                        <a className="px-1" href="/signin">Sign in</a>
+                        <LinkButton className="px-1" to="/signin" title='Sign in'></LinkButton>
                     </p>
-                    <Link to='/'>
-                        <button type="submit" className="px-3 py-2 fw-bold rounded signinbutton" onClick={handleSignUp}>
-                            Sign up
-                        </button>
-                    </Link>
+                    <button type="submit" className="px-3 py-2 fw-bold rounded signinbutton" onClick={handleSignUp}>
+                        Sign up
+                    </button>
                 </div>
             </form>
         </div>

@@ -35,7 +35,7 @@ const CityList = () => {
                     cities?.length>0
                     ? cities?.map((city) => {
                         return (
-                            <div key={city._id} to={`/cities/${city._id}`} className="divtarjetas rounded tarjeta color d-flex flex-column flex-wrap justify-content-center align-items-center">
+                            <div key={city._id} className="divtarjetas rounded tarjeta color d-flex flex-column flex-wrap justify-content-center align-items-center">
                                 <h1 className='fw-bold text textotarjeta'>{city.name}</h1>
                                 <h2 className="text m-1 paises textotarjeta">({city.country})</h2>
                                 <img className="images rounded" src={city.photo} alt="" />

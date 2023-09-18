@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import '../styles/ItineraryList.css'
 import { get_itineraries } from "../store/actions/itineraryActions"
+import Link from "./Link"
 
 const ItineraryList = () => {
     const itineraries=useSelector((store)=>store.itineraryReducer.itineraries)
@@ -14,18 +15,17 @@ const ItineraryList = () => {
             id
         ))
     }, [])
-    console.log(id);
-    console.log(itineraries);
+    
     return (
         <div className="d-flex flex-wrap justify-content-center align-items-center container">
             <div className="divitinerario color d-flex flex-column">
                 <h2 className="align-self-center itinerarytitle color">Itineraries</h2>
                 {
                     itineraries?.length>0
-                    ? itineraries?.map((itinerary) => {
+                    ? itineraries?.map((itinerary,index) => {
                         return (
                             <>
-                                <div className="itinerario color d-flex flex-column">
+                                <div key={index} className="itinerario color d-flex flex-column">
                                     <div className="color d-flex flex-wrap justify-content-between align-items-center">
                                         <h2 className="text">{itinerary?.name}</h2>
                                         <div className="color d-flex flex-column justify-content-center align-items-center">

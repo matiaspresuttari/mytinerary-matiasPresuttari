@@ -25,7 +25,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/cities/:id',
-                element: <CityDetails/>
+                element: (<UserNotExists>
+                    <CityDetails/>
+                </UserNotExists>)
             },
         ]
     },
